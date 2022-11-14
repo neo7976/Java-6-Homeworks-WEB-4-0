@@ -17,22 +17,19 @@ public class PostController {
     }
 
     public void all(HttpServletResponse response) throws IOException {
-        response.setContentType(APPLICATION_JSON);
+        final Gson gson = getGson(response);
         final var data = service.all();
-        final var gson = new Gson();
         response.getWriter().print(gson.toJson(data));
     }
 
     public void getById(long id, HttpServletResponse response) throws IOException {
-        response.setContentType(APPLICATION_JSON);
+        final Gson gson = getGson(response);
         final var data = service.getById(id);
-        final var gson = new Gson();
         response.getWriter().print(gson.toJson(data));
     }
 
     public void save(Reader body, HttpServletResponse response) throws IOException {
-        response.setContentType(APPLICATION_JSON);
-        final var gson = new Gson();
+        final Gson gson = getGson(response);
         final var post = gson.fromJson(body, Post.class);
         final var data = service.save(post);
         response.getWriter().print(gson.toJson(data));
@@ -42,5 +39,11 @@ public class PostController {
         // TODO: deserialize request & serialize response
 //        response.setContentType(APPLICATION_JSON);
         service.removeById(id);
+    }
+
+    private static Gson getGson(HttpServletResponse response) {
+        response.setContentType(APPLICATION_JSON);
+        final var gson = new Gson();
+        return gson;
     }
 }

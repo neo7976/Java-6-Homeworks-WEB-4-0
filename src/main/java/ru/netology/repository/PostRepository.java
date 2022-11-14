@@ -14,7 +14,7 @@ public class PostRepository {
     private final List<Post> list = new ArrayList<>();
     private final AtomicLong aLong = new AtomicLong(0);
 
-    public List<Post> all() {
+    public synchronized List<Post> all() {
         if (!list.isEmpty())
             return list;
         return Collections.emptyList();
