@@ -36,7 +36,7 @@ public class PostRepository {
         } else if (list.contains(post)) {
             int x = list.indexOf(post);
             list.set(x, post);
-                } else {
+        } else {
             throw new NotFoundException(String.format("POST c id=%s не сушествует", post.getId()));
         }
         return post;
@@ -45,7 +45,12 @@ public class PostRepository {
 
     public synchronized void removeById(long id) {
         if (!list.isEmpty()) {
-            list.removeIf((x) -> (x.getId() == id));
+            if (getById(id).isPresent())
+                list.removeIf((x) -> (x.getId() == id));
+            else
+                throw new NotFoundException(String.format("Невозможно найти и удалить POST c id=%s", id));
         }
+        else
+            throw new NotFoundException("Постов не существует!");
     }
 }
