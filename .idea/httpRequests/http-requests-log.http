@@ -1,0 +1,78 @@
+GET http://localhost:8080/api/posts/10
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+###
+
+DELETE http://localhost:8080/api/posts/10
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+<> 2022-11-14T112108.200.json
+
+###
+
+GET http://localhost:8080/api/posts/1
+
+<> 2022-11-14T112101.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-14T112010.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-14T112008.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-14T112005.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-14T112000.200.json
+
+###
+
+GET http://localhost:8080/api/posts
+
+<> 2022-11-14T111934.200.json
+
+###
+
