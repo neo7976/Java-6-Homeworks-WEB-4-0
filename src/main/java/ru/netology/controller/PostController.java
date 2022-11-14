@@ -40,7 +40,7 @@ public class PostController {
 
     public void removeById(long id, HttpServletResponse response) throws IOException {
         // TODO: deserialize request & serialize response
-        response.setContentType(APPLICATION_JSON);
+//        response.setContentType(APPLICATION_JSON);
         service.removeById(id);
     }
 }
