@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 // Stub
 public class PostRepository {
-    private List<Post> list = new ArrayList<>();
+    private final List<Post> list = new ArrayList<>();
     private final AtomicLong aLong = new AtomicLong(0);
 
     public List<Post> all() {
@@ -20,7 +20,7 @@ public class PostRepository {
         return Collections.emptyList();
     }
 
-    public Optional<Post> getById(long id) {
+    public synchronized Optional<Post> getById(long id) {
         for (Post post : list) {
             if (post.getId() == id) {
                 return Optional.of(post);
@@ -41,6 +41,9 @@ public class PostRepository {
     }
 
 
-    public void removeById(long id) {
+    public synchronized void removeById(long id) {
+        if (!list.isEmpty()) {
+            list.removeIf((x) -> (x.getId() == id));
+        }
     }
 }
