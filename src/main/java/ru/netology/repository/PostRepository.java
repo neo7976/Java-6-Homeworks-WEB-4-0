@@ -1,12 +1,12 @@
 package ru.netology.repository;
 
+import ru.netology.exception.NotFoundException;
 import ru.netology.model.Post;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 // Stub
@@ -30,13 +30,15 @@ public class PostRepository {
     }
 
     public synchronized Post save(Post post) {
-        //todo если id поста нет, то сохранить как следующий или выдать ошибку
-        if (post.getId() == 0 || !list.contains(post)) {
+        if (post.getId() == 0) {
             post.setId(aLong.incrementAndGet());
             list.add(post);
+        } else if (list.contains(post)) {
+            int x = list.indexOf(post);
+            list.set(x, post);
+                } else {
+            throw new NotFoundException(String.format("POST c id=%s не сушествует", post.getId()));
         }
-        int x = list.indexOf(post);
-        list.set(x, post);
         return post;
     }
 
