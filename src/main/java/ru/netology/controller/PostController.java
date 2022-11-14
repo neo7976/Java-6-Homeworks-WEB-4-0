@@ -24,7 +24,6 @@ public class PostController {
     }
 
     public void getById(long id, HttpServletResponse response) throws IOException {
-        // TODO: deserialize request & serialize response
         response.setContentType(APPLICATION_JSON);
         final var data = service.getById(id);
         final var gson = new Gson();

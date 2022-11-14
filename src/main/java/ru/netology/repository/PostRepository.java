@@ -21,7 +21,11 @@ public class PostRepository {
     }
 
     public Optional<Post> getById(long id) {
-
+        for (Post post : list) {
+            if (post.getId() == id) {
+                return Optional.of(post);
+            }
+        }
         return Optional.empty();
     }
 
