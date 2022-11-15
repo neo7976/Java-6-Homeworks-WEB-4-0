@@ -9,15 +9,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class PostRepository {
-    //    private final List<Post> list = new ArrayList<>();
-//    private final Set<Post> map = ConcurrentHashMap.newKeySet();
+
+    //todo убрать и реализовать через мапу
     private final List<Post> list = new CopyOnWriteArrayList<>();
-    private final AtomicLong aLong = new AtomicLong(0);
+    private final AtomicLong aLong;
+    private final Map<Long, Post> maps;
+
+    public PostRepository() {
+        this.aLong = new AtomicLong(0);
+        this.maps = new ConcurrentHashMap<>();
+    }
 
     public List<Post> all() {
-        if (!list.isEmpty())
-            return list;
-        return Collections.emptyList();
+        return new ArrayList<>(maps.values());
     }
 
     public Optional<Post> getById(long id) {
