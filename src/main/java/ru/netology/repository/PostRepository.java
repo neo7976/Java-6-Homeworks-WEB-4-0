@@ -3,24 +3,24 @@ package ru.netology.repository;
 import ru.netology.exception.NotFoundException;
 import ru.netology.model.Post;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
-// Stub
 public class PostRepository {
-    private final List<Post> list = new ArrayList<>();
+    //    private final List<Post> list = new ArrayList<>();
+//    private final Set<Post> map = ConcurrentHashMap.newKeySet();
+    private final List<Post> list = new CopyOnWriteArrayList<>();
     private final AtomicLong aLong = new AtomicLong(0);
 
-    public synchronized List<Post> all() {
+    public List<Post> all() {
         if (!list.isEmpty())
             return list;
         return Collections.emptyList();
     }
 
-    public synchronized Optional<Post> getById(long id) {
+    public Optional<Post> getById(long id) {
         for (Post post : list) {
             if (post.getId() == id) {
                 return Optional.of(post);
@@ -29,7 +29,7 @@ public class PostRepository {
         return Optional.empty();
     }
 
-    public synchronized Post save(Post post) {
+    public Post save(Post post) {
         if (post.getId() == 0) {
             post.setId(aLong.incrementAndGet());
             list.add(post);
@@ -43,14 +43,13 @@ public class PostRepository {
     }
 
 
-    public synchronized void removeById(long id) {
+    public void removeById(long id) {
         if (!list.isEmpty()) {
             if (getById(id).isPresent())
                 list.removeIf((x) -> (x.getId() == id));
             else
                 throw new NotFoundException(String.format("Невозможно найти и удалить POST c id=%s", id));
-        }
-        else
+        } else
             throw new NotFoundException("Постов не существует!");
     }
 }
