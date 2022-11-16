@@ -25,14 +25,14 @@ import java.io.IOException;
 //}
 
 public class MainServlet extends HttpServlet {
-    private PostController controller;
+//    private PostController controller;
 
-    @Override
-    public void init() {
-        final var repository = new PostRepository();
-        final var service = new PostService(repository);
-        controller = new PostController(service);
-    }
+//    @Override
+//    public void init() {
+//        final var repository = new PostRepository();
+//        final var service = new PostService(repository);
+//        controller = new PostController(service);
+//    }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
