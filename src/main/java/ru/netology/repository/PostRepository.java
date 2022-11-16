@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class PostRepository {
 
     //todo убрать и реализовать через мапу
-    private final List<Post> list = new CopyOnWriteArrayList<>();
+//    private final List<Post> list = new CopyOnWriteArrayList<>();
     private final AtomicLong aLong;
     private final Map<Long, Post> maps;
 
@@ -25,21 +25,15 @@ public class PostRepository {
     }
 
     public Optional<Post> getById(long id) {
-        for (Post post : list) {
-            if (post.getId() == id) {
-                return Optional.of(post);
-            }
-        }
-        return Optional.empty();
+        return Optional.ofNullable(maps.get(id));
     }
 
     public Post save(Post post) {
         if (post.getId() == 0) {
             post.setId(aLong.incrementAndGet());
-            list.add(post);
-        } else if (list.contains(post)) {
-            int x = list.indexOf(post);
-            list.set(x, post);
+            maps.put(post.getId(), post);
+        } else if (maps.containsKey(post.getId())) {
+            maps.put(post.getId(), post);
         } else {
             throw new NotFoundException(String.format("POST c id=%s не сушествует", post.getId()));
         }
@@ -48,12 +42,9 @@ public class PostRepository {
 
 
     public void removeById(long id) {
-        if (!list.isEmpty()) {
-            if (getById(id).isPresent())
-                list.removeIf((x) -> (x.getId() == id));
-            else
-                throw new NotFoundException(String.format("Невозможно найти и удалить POST c id=%s", id));
+        if (maps.containsKey(id)) {
+            maps.remove(id);
         } else
-            throw new NotFoundException("Постов не существует!");
+            throw new NotFoundException(String.format("Невозможно найти и удалить POST c id=%s", id));
     }
 }

@@ -1,3 +1,119 @@
+GET http://localhost:8080/api/posts/10
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+###
+
+DELETE http://localhost:8080/api/posts/10
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 25,
+  "content": "Last Post"
+}
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-16T093940.200.json
+
+###
+
+DELETE http://localhost:8080/api/posts/10
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 25,
+  "content": "Last Post"
+}
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-16T093925-1.200.json
+
+###
+
+GET http://localhost:8080/api/posts
+
+<> 2022-11-16T093925.200.json
+
+###
+
+DELETE http://localhost:8080/api/posts/10
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+<> 2022-11-16T093843-2.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 25,
+  "content": "Last Post"
+}
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-16T093843-1.200.json
+
+###
+
+GET http://localhost:8080/api/posts
+
+<> 2022-11-16T093843.200.json
+
+###
+
 GET http://localhost:8080/api/posts
 
 <> 2022-11-14T122543.200.json
@@ -241,148 +357,6 @@ Content-Type: application/json
 }
 
 <> 2022-11-14T115707.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 5,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115705.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115703.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115656.200.json
-
-###
-
-GET http://localhost:8080/api/posts
-
-<> 2022-11-14T115654.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115653.200.json
-
-###
-
-GET http://localhost:8080/api/posts
-
-<> 2022-11-14T115651.200.json
-
-###
-
-DELETE http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 5,
-  "content": "Last Post"
-}
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115624-1.200.json
-
-###
-
-GET http://localhost:8080/api/posts
-
-<> 2022-11-14T115624.200.json
-
-###
-
-DELETE http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 5,
-  "content": "Last Post"
-}
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115609-1.200.json
-
-###
-
-GET http://localhost:8080/api/posts
-
-<> 2022-11-14T115609.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 5,
-  "content": "Last Post"
-}
 
 ###
 
