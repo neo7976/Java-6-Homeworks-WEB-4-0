@@ -1,38 +1,22 @@
 package ru.netology.servlet;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.netology.controller.PostController;
 import ru.netology.exception.NotFoundException;
-import ru.netology.repository.PostRepository;
-import ru.netology.service.PostService;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-////todo код с лекции на понимание
-//public class MainServlet extends HttpServlet {
-//
-//    @Override
-//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.setHeader("Content-TYpe", "text/plain");
-//        resp.setStatus(HttpServletResponse.SC_FORBIDDEN);
-//        resp.getWriter().print("hello from server");
-//    }
-//}
 
 public class MainServlet extends HttpServlet {
-//    private PostController controller;
+    private PostController controller;
 
-//    @Override
-//    public void init() {
-//        final var repository = new PostRepository();
-//        final var service = new PostService(repository);
-//        controller = new PostController(service);
-//    }
+    @Override
+    public void init() throws ServletException {
+        final var context = new AnnotationConfigApplicationContext("ru.netology");
+        controller = context.getBean(PostController.class);
+    }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
