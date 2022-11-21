@@ -1,3 +1,159 @@
+DELETE http://localhost:8080/api/posts/10
+
+<> 2022-11-21T123830-2.404.html
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+<> 2022-11-21T123830-1.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 25,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T123830.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T123830-1.200.json
+
+###
+
+GET http://localhost:8080/api/posts
+
+<> 2022-11-21T123830.200.json
+
+###
+
+DELETE http://localhost:8080/api/posts/10
+
+<> 2022-11-21T123825.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T123821.200.json
+
+###
+
+GET http://localhost:8080/api/posts
+
+<> 2022-11-21T123815.200.json
+
+###
+
+DELETE http://localhost:8080/api/posts/10
+
+<> 2022-11-21T123809-1.404.html
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+<> 2022-11-21T123809.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 25,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T123808.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T123807.200.json
+
+###
+
+GET http://localhost:8080/api/posts
+
+<> 2022-11-21T123804.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T123755.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T123337.200.json
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 25,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T122538.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T122232.200.json
+
+###
+
 GET http://localhost:8080/api/posts/10
 
 ###
@@ -205,158 +361,6 @@ DELETE http://localhost:8080/api/posts/10
 ###
 
 GET http://localhost:8080/api/posts/10
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 25,
-  "content": "Last Post"
-}
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T122507-1.200.json
-
-###
-
-GET http://localhost:8080/api/posts
-
-<> 2022-11-14T122507.200.json
-
-###
-
-DELETE http://localhost:8080/api/posts/10
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 25,
-  "content": "Last Post"
-}
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115841.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115837.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 0,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115832.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 25,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115823.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 25,
-  "content": "Last Post"
-}
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 5,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115726.200.json
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 5,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115725.200.json
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-POST http://localhost:8080/api/posts
-Content-Type: application/json
-
-{
-  "id": 5,
-  "content": "Last Post"
-}
-
-<> 2022-11-14T115707.200.json
 
 ###
 
