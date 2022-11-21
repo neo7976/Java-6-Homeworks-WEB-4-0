@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Post {
     private long id;
     private String content;
-//    @Expose(deserialize = false)
+//   скрыли поле от пользователя
     private transient boolean removed;
 
     public Post() {
@@ -56,11 +56,4 @@ public class Post {
         return Objects.hash(id);
     }
 
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", content='" + content + '\'' +
-                '}';
-    }
 }

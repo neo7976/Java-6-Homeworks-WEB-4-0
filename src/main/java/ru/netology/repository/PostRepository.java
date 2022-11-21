@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
+
 @Repository
 public class PostRepository {
 
@@ -24,10 +26,12 @@ public class PostRepository {
     }
 
     public List<Post> all() {
-        return new ArrayList<>(maps.values());
+        return new ArrayList<>(maps.values()).stream().filter(x -> !x.isRemoved()).collect(Collectors.toList());
     }
 
     public Optional<Post> getById(long id) {
+        if (maps.get(id).isRemoved())
+            return Optional.empty();
         return Optional.ofNullable(maps.get(id));
     }
 
@@ -35,7 +39,7 @@ public class PostRepository {
         if (post.getId() == 0) {
             post.setId(aLong.incrementAndGet());
             maps.put(post.getId(), post);
-        } else if (maps.containsKey(post.getId())) {
+        } else if (maps.containsKey(post.getId()) && !maps.get(post.getId()).isRemoved()) {
             maps.put(post.getId(), post);
         } else {
             throw new NotFoundException(String.format("POST c id=%s не сушествует", post.getId()));
@@ -46,7 +50,7 @@ public class PostRepository {
 
     public void removeById(long id) {
         if (maps.containsKey(id)) {
-            maps.remove(id);
+            maps.get(id).setRemoved(true);
         } else
             throw new NotFoundException(String.format("Невозможно найти и удалить POST c id=%s", id));
     }
