@@ -1,45 +1,66 @@
 package ru.netology.model;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.Objects;
 
 public class Post {
-  private long id;
-  private String content;
+    private long id;
+    private String content;
+//    @Expose(deserialize = false)
+    private transient boolean removed;
 
-  public Post() {
-  }
+    public Post() {
+    }
 
-  public Post(long id, String content) {
-    this.id = id;
-    this.content = content;
-  }
+    public Post(long id, String content, boolean removed) {
+        this.id = id;
+        this.content = content;
+        this.removed = removed;
+    }
 
-  public long getId() {
-    return id;
-  }
+    public boolean isRemoved() {
+        return removed;
+    }
 
-  public void setId(long id) {
-    this.id = id;
-  }
+    public void setRemoved(boolean removed) {
+        this.removed = removed;
+    }
 
-  public String getContent() {
-    return content;
-  }
+    public long getId() {
+        return id;
+    }
 
-  public void setContent(String content) {
-    this.content = content;
-  }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    Post post = (Post) o;
-    return id == post.id;
-  }
+    public String getContent() {
+        return content;
+    }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(id);
-  }
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return id == post.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }

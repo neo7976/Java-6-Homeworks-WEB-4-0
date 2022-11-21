@@ -1,5 +1,47 @@
 DELETE http://localhost:8080/api/posts/10
 
+<> 2022-11-21T125639.404.html
+
+###
+
+GET http://localhost:8080/api/posts/10
+
+<> 2022-11-21T125638-1.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 25,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T125638.404.html
+
+###
+
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Last Post"
+}
+
+<> 2022-11-21T125638-1.200.json
+
+###
+
+GET http://localhost:8080/api/posts
+
+<> 2022-11-21T125638.200.json
+
+###
+
+DELETE http://localhost:8080/api/posts/10
+
 <> 2022-11-21T123830-2.404.html
 
 ###
@@ -341,26 +383,6 @@ GET http://localhost:8080/api/posts/10
 ###
 
 DELETE http://localhost:8080/api/posts/10
-
-###
-
-DELETE http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
-
-###
-
-DELETE http://localhost:8080/api/posts/10
-
-###
-
-GET http://localhost:8080/api/posts/10
 
 ###
 
